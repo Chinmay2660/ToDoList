@@ -1,16 +1,27 @@
 //jshint esversion:6
 
-module.exports = getDate; // Export the getDate function
+exports.getDate = function () { // Export the getDate function
 
-function getDate() {
-    let today = new Date(); // Create a new date object
-    let options = {
+    const today = new Date(); // Create a new date object
+    const options = {
         // Create an object to store the options for the date
         weekday: "long", // Set the day of the week
         day: "numeric", // Set the day of the month
         month: "long", // Set the month
     };
 
-    let day = today.toLocaleDateString("en-US", options); //  Set the day of the week
-    return day;
+    return today.toLocaleDateString("en-US", options); //  Set the day of the week
 }
+
+module.exports.getDay = function () { // Export the getDay function
+
+    const today = new Date(); // Create a new date object
+    const options = {
+        // Create an object to store the options for the date
+        weekday: "long", // Set the day of the week
+    };
+
+    return today.toLocaleDateString("en-US", options); //  Set the day of the week
+}
+
+// console.log(module.exports); // Log the module.exports object to the console
