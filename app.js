@@ -2,6 +2,9 @@
 
 const express = require("express"); // Express is a framework for Node.js
 const bodyParser = require("body-parser"); // Body-parser is a middleware for Express
+const date = require(__dirname + "/date.js"); // Require the date.js file
+
+console.log(date()); // Log the date to the console
 
 const app = express(); // Create an Express app
 
@@ -15,7 +18,6 @@ app.use(express.static("public")); // Use the public folder
 
 app.get("/", function (req, res) {
   // Get request to the root route
-  let today = new Date(); // Create a new date object
   // var currentDay = today.getDay(); // Get the day of the week
   // var day = ""; // Create a variable to store the day of the week
 
@@ -45,15 +47,6 @@ app.get("/", function (req, res) {
   //     console.log("Error: current day is equal to: " + currentDay);
   // }
 
-  let options = {
-    // Create an object to store the options for the date
-    weekday: "long", // Set the day of the week
-    day: "numeric", // Set the day of the month
-    month: "long", // Set the month
-  };
-
-  let day = today.toLocaleDateString("en-US", options); //  Set the day of the week
-
   // if (currentDay === 6 || currentDay === 0) {
   //   day = "Weekend"; // Set the day of the week
   //   // res.sendFile(__dirname + "/weekend.html"); // Send a response
@@ -62,6 +55,8 @@ app.get("/", function (req, res) {
   //   // res.sendFile(__dirname + "/weekday.html"); // Send a response
   // }
   // res.render("list", { kindOfDay: day, newListItem: items }); // Render the index.ejs file and pass the day of the week
+
+  let day = date(); // Set the day of the week
   res.render("list", { listTitle: day, newListItem: items });
 });
 
