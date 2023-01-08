@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <title>To Do List</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-
-<body>
-  <div class="box" id="heading">
+<%- include("header"); -%> <!-- include header.ejs file -->
+  <div class="box" id="heading"> <!-- id="heading" is for the background image -->
     <h1>
-      <%= listTitle %>
+      <%= listTitle %> <!-- listTitle is from the list.ejs file -->
     </h1>
   </div>
 
   <div class="box">
     <!-- <li><%= newListItem %></li> -->
 
-    <% for(var i=0; i < newListItem.length; i++){ %>
+    <% for(var i=0; i < newListItem.length; i++){ %> <!-- for loop to display all items in the array -->
       <div class="item">
         <input type="checkbox" />
         <p>
@@ -26,12 +17,11 @@
       </div>
       <% } %>
 
-        <form class="item" action="/" method="post">
+        <form class="item" action="/" method="post"> <!-- form to add new items -->
           <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
-          <button type="submit" name="list" value=<%=listTitle %>>+</button>
+          <!-- input field for new items -->
+          <button type="submit" name="list" value=<%=listTitle %>>+</button> <!-- button to add new items -->
         </form>
   </div>
-</body>
-<footer>Copyright@2022 PsychoKiller</footer>
 
-</html>
+  <%- include("footer"); -%> <!-- include footer.ejs file -->
