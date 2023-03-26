@@ -139,13 +139,23 @@ app.get("/:customListName", function (req, res) {
 app.post("/", function (req, res) {
   // Post request to the root route
   const itemName = req.body.newItem; // Get the new item from the request body
+  const listName = req.body.list; // Get the list name from the request body
+
   const item = new Item({ // Create a new item
     name: itemName, // Set the name of the item
   });
 
-  item.save(); // Save the new item to the database
-
-  res.redirect("/"); // Redirect to the root route
+  if (listName === "Today") { // If the list is the default list
+    item.save(); // Save the new item to the database
+    res.redirect("/"); // Redirect to the root route
+  } else {
+    List.findOne({ name: listName })
+      .then(function (foundList) { // Find the list with the custom list name
+        foundList.items.push(item); // Push the new item to the items array
+        foundList.save(); // Save the list to the database
+        res.redirect("/" + listName) // Redirect to the custom list route
+      });
+  }
 
   // const item = req.body.newItem;
   // if (req.body.list === "Work") {

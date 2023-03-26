@@ -1,40 +1,39 @@
 <%- include("header"); -%> <!-- include header.ejs file -->
-  <div class="box" id="heading"> <!-- id="heading" is for the background image -->
-    <h1>
-      <%= listTitle %> <!-- listTitle is from the list.ejs file -->
-    </h1>
-  </div>
+<div class="box" id="heading"> <!-- id="heading" is for the background image -->
+  <h1>
+    <%= listTitle %> <!-- listTitle is from the list.ejs file -->
+  </h1>
+</div>
 
-  <div class="box">
-    <!-- <li><%= newListItem %></li> -->
+<div class="box">
+  <!-- <li><%= newListItem %></li> -->
 
-    <% newListItem.forEach(function(item){ %> <!-- forEach loop to display all items in the array -->
+  <% newListItem.forEach(function(item){ %> <!-- forEach loop to display all items in the array -->
 
-      <form action="/delete" method="post">
-        <div class="item">
-          <input type="checkbox" name="checkbox" value="<%=item._id%>"" onChange=" this.form.submit()" />
-          <!-- checkbox for each item -->
-          <p>
-            <%= item.name %>
-          </p>
-        </div>
-      </form>
-      <% }); %>
+  <form action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%=item._id%>"" onChange=" this.form.submit()" />
+      <!-- checkbox for each item -->
+      <p>
+        <%= item.name %>
+      </p>
+    </div>
+  </form>
+  <% }); %>
 
-        <!-- <% for(var i=0; i < newListItem.length; i++){ %> for loop to display all items in the array -->
-        <!-- <div class="item">
+  <!-- <% for(var i=0; i < newListItem.length; i++){ %> for loop to display all items in the array -->
+  <!-- <div class="item">
           <input type="checkbox" />
           <p>
          <!-- <%= newListItem[i].name %> -->
-        <!-- </p> -->
-        <!-- </div>  -->
-        <!-- <% } %> -->
+  <!-- </p> -->
+  <!-- </div>  -->
+  <!-- <% } %> -->
 
-        <form class="item" action="/" method="post"> <!-- form to add new items -->
-          <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
-          <!-- input field for new items -->
-          <button type="submit" name="list" value=<%=listTitle %>>+</button> <!-- button to add new items -->
+  <form class="item" action="/" method="post"> <!-- form to add new items -->
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
+    <!-- input field for new items -->
+    <button type="submit" name="list" value="<%=listTitle %>"">+</button> <!-- button to add new items -->
         </form>
   </div>
-
-  <%- include("footer"); -%> <!-- include footer.ejs file -->
+<%- include("footer"); -%> <!-- include header.ejs file -->
