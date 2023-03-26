@@ -10,15 +10,15 @@
 
   <% newListItem.forEach(function(item){ %> <!-- forEach loop to display all items in the array -->
 
-  <input action="/delete" method="post">
-  <div class="item">
-    <input type="checkbox" name="checkbox" value="<%=item._id%>"" onChange=" this.form.submit()" />
-    <!-- checkbox for each item -->
-    <p>
-      <%= item.name %>
-    </p>
-  </div>
-  <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+  <form action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%=item._id%>"" onChange=" this.form.submit()" />
+      <!-- checkbox for each item -->
+      <p>
+        <%= item.name %>
+      </p>
+    </div>
+    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
   </form>
   <% }); %>
 
