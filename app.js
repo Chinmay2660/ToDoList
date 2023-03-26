@@ -2,12 +2,23 @@
 
 const express = require("express"); // Express is a framework for Node.js
 const bodyParser = require("body-parser"); // Body-parser is a middleware for Express
-const date = require(__dirname + "/date.js"); // Require the date.js file
+const mongoose = require("mongoose"); // Mongoose is an ODM for MongoDB
+// const date = require(__dirname + "/date.js"); // Require the date.js file
 
 const app = express(); // Create an Express app
 
-const items = ["Buy Food", "Cook Food", "Eat Food"]; // Create a variable to store the new item
-const workItems = []; // Create a variable to store the new work item
+// const items = ["Buy Food", "Cook Food", "Eat Food"]; // Create a variable to store the new item
+// const workItems = []; // Create a variable to store the new work item
+
+mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", {
+  useNewUrlParser: true,
+});
+
+const itemsSchema = {
+  name: String,
+};
+
+const Item = mongoose.model("Item", itemsSchema);
 
 app.set("view engine", "ejs"); // Set the view engine to EJS
 
@@ -54,8 +65,8 @@ app.get("/", function (req, res) {
   // }
   // res.render("list", { kindOfDay: day, newListItem: items }); // Render the index.ejs file and pass the day of the week
 
-  const day = date.getDate(); // Set the day of the week
-  res.render("list", { listTitle: day, newListItem: items });
+  // const day = date.getDate(); // Set the day of the week
+  res.render("list", { listTitle: "Today", newListItem: items });
 });
 
 app.post("/", function (req, res) {
