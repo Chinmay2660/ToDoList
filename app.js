@@ -3,6 +3,7 @@
 const express = require("express"); // Express is a framework for Node.js
 const bodyParser = require("body-parser"); // Body-parser is a middleware for Express
 const mongoose = require("mongoose"); // Mongoose is an ODM for MongoDB
+const _ = require("lodash"); // Lodash is a utility library
 // const date = require(__dirname + "/date.js"); // Require the date.js file
 
 const app = express(); // Create an Express app
@@ -114,7 +115,7 @@ app.get("/", function (req, res) {
 
 app.get("/:customListName", function (req, res) {
   // Get request to the custom list route
-  const customListName = req.params.customListName; // Get the custom list name from the request parameters
+  const customListName = _.capitalize(req.params.customListName); // Get the custom list name from the request parameters
   List.findOne({ name: customListName })
     .then(function (foundList) { // Find the list with the custom list name
       if (foundList) { // If the list exists
@@ -173,13 +174,21 @@ app.post("/", function (req, res) {
 app.post("/delete", function (req, res) {
   // Post request to the /delete route
   const checkedItemId = req.body.checkbox; // Get the id of the checked item from the request body
+  const listName = req.body.listName; // Get the list name from the request body
 
-  Item.findByIdAndRemove(checkedItemId) // Find the item by its id and remove it
-    .then(function (foundItem) { // If the item is successfully removed
-      Item.deleteOne({ _id: checkedItemId }) // Delete the item from the database
-      console.log("Successfully deleted checked item"); // Log a message to the console
-      res.redirect("/"); // Redirect to the root route
-    });
+  if (listName === "Today") { // If the list is the default list 
+    Item.findByIdAndRemove(checkedItemId) // Find the item by its id and remove it
+      .then(function (foundItem) { // If the item is successfully removed
+        Item.deleteOne({ _id: checkedItemId }) // Delete the item from the database
+        console.log("Successfully deleted checked item"); // Log a message to the console
+        res.redirect("/"); // Redirect to the root route
+      });
+  } else {
+    List.findOneAndUpdate({ name: listName }, { $pull: { items: { _id: checkedItemId } } }) // Find the list by its name and remove the item from the items array
+      .then(function (foundList) { // If the list is successfully updated
+        res.redirect("/" + listName); // Redirect to the custom list route
+      });
+  }
 });
 
 // app.get("/work", function (req, res) { 
