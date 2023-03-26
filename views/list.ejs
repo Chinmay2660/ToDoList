@@ -9,12 +9,16 @@
     <!-- <li><%= newListItem %></li> -->
 
     <% newListItem.forEach(function(item){ %> <!-- forEach loop to display all items in the array -->
-      <div class="item">
-        <input type="checkbox" /> <!-- checkbox for each item -->
-        <p>
-          <%= item.name %>
-        </p>
-      </div>
+
+      <form action="/delete" method="post">
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%=item._id%>"" onChange=" this.form.submit()" />
+          <!-- checkbox for each item -->
+          <p>
+            <%= item.name %>
+          </p>
+        </div>
+      </form>
       <% }); %>
 
         <!-- <% for(var i=0; i < newListItem.length; i++){ %> for loop to display all items in the array -->

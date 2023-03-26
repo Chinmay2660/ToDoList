@@ -116,6 +116,8 @@ app.post("/", function (req, res) {
 
   item.save(); // Save the new item to the database
 
+  res.redirect("/"); // Redirect to the root route
+
   // const item = req.body.newItem;
   // if (req.body.list === "Work") {
   //   // If the list is the work list
@@ -126,6 +128,19 @@ app.post("/", function (req, res) {
   //   // console.log(item); // Log the new item to the console
   //   res.redirect("/"); // Redirect to the root route
   // }
+});
+
+
+app.post("/delete", function (req, res) {
+  // Post request to the /delete route
+  const checkedItemId = req.body.checkbox; // Get the id of the checked item from the request body
+
+  Item.findByIdAndRemove(checkedItemId)
+    .then(function (foundItem) {
+      Item.deleteOne({ _id: checkedItemId })
+      console.log("Successfully deleted checked item");
+      res.redirect("/"); // Redirect to the root route
+    });
 });
 
 app.get("/work", function (req, res) {
