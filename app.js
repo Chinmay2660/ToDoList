@@ -30,15 +30,15 @@ const item1 = new Item({ // Create a new item
   name: "Welcome to your todolist!", // Set the name of the item
 });
 
-const item2 = new Item({ // Create a new item
-  name: "Hit the + button to add a new item.", // Set the name of the item
-});
+// const item2 = new Item({ // Create a new item
+//   name: "Hit the + button to add a new item.", // Set the name of the item
+// });
 
-const item3 = new Item({ // Create a new item
-  name: "<-- Hit this to delete an item.", // Set the name of the item
-});
+// const item3 = new Item({ // Create a new item
+//   name: "<-- Hit this to delete an item.", // Set the name of the item
+// });
 
-const defaultItems = [item1, item2, item3]; // Create an array of the default items
+const defaultItems = [item1]; // Create an array of the default items
 
 const listSchema = new mongoose.Schema({ // Create a schema for the lists
   name: String, // The name of the list
