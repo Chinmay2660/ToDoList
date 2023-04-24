@@ -16,9 +16,11 @@ app.set("view engine", "ejs"); // Set the view engine to EJS
 app.use(bodyParser.urlencoded({ extended: true })); // Use body-parser
 app.use(express.static("public")); // Use the public folder
 
-mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", { // Connect to the todolistDB database
-  useNewUrlParser: true,
-});
+// mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", { // Connect to the todolistDB database
+//   useNewUrlParser: true,
+// });
+
+mongoose.connect("mongodb+srv://bhoirchinmay2016:Chinmay@cluster0.engybuo.mongodb.net/todolistDB");
 
 const itemsSchema = new mongoose.Schema({ // Create a schema for the items
   name: String, // The name of the item
@@ -112,6 +114,8 @@ app.get("/", function (req, res) {
     }
   });
 });
+
+
 
 app.get("/:customListName", function (req, res) {
   // Get request to the custom list route

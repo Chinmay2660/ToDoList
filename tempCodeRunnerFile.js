@@ -1,0 +1,1 @@
+res.redirect("/"); // Redirect to the root route
