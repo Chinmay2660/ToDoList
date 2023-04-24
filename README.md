@@ -5,11 +5,10 @@ This is a simple To-Do List application implemented in HTML, CSS, and JavaScript
 ## Features
 
 - Add new tasks to the list
-- Edit existing tasks
 - Delete tasks from the list
-- Mark tasks as completed
-- Filter tasks by completion status
 - Simple and intuitive user interface
+
+## Demo - [Check here](https://to-do-list-x3qn.onrender.com/) 
 
 ## Contributing
 
