@@ -207,8 +207,13 @@ app.post("/work", function (req, res) {
   res.redirect("/work"); // Redirect to the /work route
 });
 
-app.listen(3000, function () {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function () {
   // Listen on port 3000
-  console.log("Server started on port 3000."); // Log a message to the console
+  console.log("Server started has started successfully."); // Log a message to the console
 });
 
