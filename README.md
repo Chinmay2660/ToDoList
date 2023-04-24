@@ -8,7 +8,9 @@ This is a simple To-Do List application implemented in HTML, CSS, and JavaScript
 - Delete tasks from the list
 - Simple and intuitive user interface
 
-## Demo - [Check here](https://crazy-elk.cyclic.app/) 
+## Demo v1 - [Check here](https://crazy-elk.cyclic.app/) 
+
+## Demo v2 - [Check here](https://todolist-4kqx.onrender.com/) 
 
 ## Contributing
 
