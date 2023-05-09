@@ -115,8 +115,6 @@ app.get("/", function (req, res) {
   });
 });
 
-
-
 app.get("/:customListName", function (req, res) {
   // Get request to the custom list route
   const customListName = _.capitalize(req.params.customListName); // Get the custom list name from the request parameters
@@ -174,7 +172,6 @@ app.post("/", function (req, res) {
   // }
 });
 
-
 app.post("/delete", function (req, res) {
   // Post request to the /delete route
   const checkedItemId = req.body.checkbox; // Get the id of the checked item from the request body
@@ -216,4 +213,3 @@ app.listen(port, function () {
   // Listen on port 3000
   console.log("Server started has started successfully."); // Log a message to the console
 });
-
