@@ -26,6 +26,7 @@ const itemsSchema = new mongoose.Schema({ // Create a schema for the items
   name: String, // The name of the item
 });
 
+
 const Item = new mongoose.model("Item", itemsSchema); // Create a model for the items
 
 const item1 = new Item({ // Create a new item
