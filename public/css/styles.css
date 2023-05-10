@@ -76,11 +76,12 @@ button {
     font-size: 30px;
     /* padding-bottom: 6px; */
     border-width: 0;
+    white-space: normal;
 }
 
 @media only screen and (max-width: 768px) {
     button {
-        margin-right: 5%;
+        margin-right: 10px;
     }
 }
 
