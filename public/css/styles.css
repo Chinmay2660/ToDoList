@@ -5,6 +5,10 @@ html {
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
+@-ms-viewport {
+    width: device-width;
+}
+
 h1 {
     color: #fff;
     padding: 10px;
