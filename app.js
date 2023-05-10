@@ -93,7 +93,6 @@ app.post("/", async(req, res) => {
     // Post request to the root route
     const itemName = req.body.newItem; // Get the new item from the request body
     const listName = req.body.list; // Get the list name from the request body
-
     const item = new Item({ // Create a new item
         name: itemName, // Set the name of the item
     });
