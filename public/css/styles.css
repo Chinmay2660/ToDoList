@@ -74,10 +74,20 @@ button {
     background-color: #a683e3;
     color: #fff;
     font-size: 30px;
-    /* padding-bottom: 6px; */
+    padding-bottom: 6px;
     border-width: 0;
     white-space: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+/* button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
 @media only screen and (max-width: 768px) {
     button {
