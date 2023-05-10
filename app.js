@@ -28,19 +28,19 @@ const itemsSchema = new mongoose.Schema({ // Create a schema for the items
 
 const Item = new mongoose.model("Item", itemsSchema); // Create a model for the items
 
-const item1 = new Item({ // Create a new item
-    name: "Welcome to your todolist!", // Set the name of the item
-});
+// const item1 = new Item({ // Create a new item
+//     name: "Welcome to your todolist!", // Set the name of the item
+// });
 
 // const item2 = new Item({ // Create a new item
-//   name: "Hit the + button to add a new item.", // Set the name of the item
+//     name: "Hit the + button to add a new item.", // Set the name of the item
 // });
 
 // const item3 = new Item({ // Create a new item
-//   name: "<-- Hit this to delete an item.", // Set the name of the item
+//     name: "<-- Hit this to delete an item.", // Set the name of the item
 // });
 
-const defaultItems = [item1]; // Create an array of the default items
+// const defaultItems = [item1, item2, item3]; // Create an array of the default items
 
 const listSchema = new mongoose.Schema({ // Create a schema for the lists
     name: String, // The name of the list
@@ -52,15 +52,15 @@ const List = new mongoose.model("List", listSchema); // Create a model for the l
 app.get("/", async(req, res) => { // Find all the items in the database
     try {
         const foundItems = await Item.find(); // Find all the items in the database
-        if (foundItems.length === 0) { // If there are no items in the database
-            await Item.insertMany(defaultItems); // Insert the default items into the database
+        // if (foundItems.length === 0) { // If there are no items in the database
+        //     // await Item.insertMany(); // Insert the default items into the database 
 
-            console.log("Successfully saved default items to DB"); // Log a message to the console
+        //     console.log("Successfully saved default items to DB"); // Log a message to the console
 
-            res.redirect("/"); // Redirect to the root route
-        } else {
-            res.render("list", { listTitle: "Today", newListItem: foundItems }); // Render the index.ejs file and pass the day of the week
-        }
+        //     res.redirect("/"); // Redirect to the root route
+        // } else {
+        res.render("list", { listTitle: "Today", newListItem: foundItems }); // Render the index.ejs file and pass the day of the week
+        // }
     } catch (err) {
         console.log(err); // Log the error to the console
     }
@@ -79,7 +79,7 @@ app.get("/:customListName", async(req, res) => {
         } else {
             const list = new List({ // Create a new list
                 name: customListName,
-                items: defaultItems
+                // items: defaultItems
             });
             await list.save(); // Save the new list to the database
             res.redirect("/" + customListName); // Redirect to the custom list route
