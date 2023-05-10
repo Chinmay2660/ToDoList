@@ -68,7 +68,7 @@ form.item {
 
 button {
     min-height: 50px;
-    width: 50px;
+    width: 1.8em;
     border-radius: 50%;
     border-color: transparent;
     background-color: #a683e3;
@@ -82,7 +82,6 @@ button {
 @media only screen and (max-width: 768px) {
     button {
         margin-right: 10px;
-        border-radius: 0;
     }
 }
 
