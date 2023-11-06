@@ -11,8 +11,8 @@ This repository contains a To-Do List application created using HTML, CSS, JavaS
 
 ## Demos
 
-- **Demo v1:** Explore the first version [here](https://crazy-elk.cyclic.app/).
-- **Demo v2:** Check out the second version [here](https://todolist-4kqx.onrender.com/).
+- **Demo v1:** Explore the link [here](https://crazy-elk.cyclic.app/).
+- **Demo v2:** Check out the Alternative link [here](https://todolist-4kqx.onrender.com/).
 
 ## Contributing
 
