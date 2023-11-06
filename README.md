@@ -1,18 +1,19 @@
 # ToDoList
 
-This is a simple To-Do List application implemented in HTML, CSS, and JavaScript. The application allows users to add, edit, and delete tasks, as well as mark them as completed.
+This repository contains a To-Do List application created using HTML, CSS, JavaScript, and EJS. The app offers functionalities to add, edit, delete tasks, and mark them as completed.
 
 ## Features
 
-- Add new tasks to the list
-- Delete tasks from the list
-- Simple and intuitive user interface
+- **Add Tasks:** Easily include new tasks in the list.
+- **Delete Tasks:** Effortlessly remove tasks from the list.
+- **Task Management:** Edit and mark tasks as completed for better organization.
+- **User-Friendly Interface:** Simple and intuitive design for a seamless user experience.
 
-## Demo v1 - [Check here](https://crazy-elk.cyclic.app/) 
+## Demos
 
-## Demo v2 - [Check here](https://todolist-4kqx.onrender.com/) 
+- **Demo v1:** Explore the first version [here](https://crazy-elk.cyclic.app/).
+- **Demo v2:** Check out the second version [here](https://todolist-4kqx.onrender.com/).
 
 ## Contributing
 
-If you find a bug or would like to suggest an improvement, please feel free to open an issue or submit a pull request.
-
+Your contributions are valuable! Whether you've found a bug or have suggestions for improvements, feel free to open an issue or submit a pull request. Your input helps make this application better for everyone.
