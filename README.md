@@ -13,6 +13,15 @@ This repository contains a To-Do List application created using HTML, CSS, JavaS
 - **Demo v1:** Explore the link [here](https://crazy-elk.cyclic.app/).
 - **Demo v2:** Check out the Alternative link [here](https://todolist-4kqx.onrender.com/).
 
+## Getting Started
+
+1. Clone the repository: 
+```
+git clone https://github.com/Chinmay2660/DiceeGame.git
+```
+2. Open `index.html` in your web browser
+3. Start Coding!
+
 ## Contributing
 
 Your contributions are valuable! Whether you've found a bug or have suggestions for improvements, feel free to open an issue or submit a pull request. Your input helps make this application better for everyone.
