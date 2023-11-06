@@ -17,7 +17,7 @@ This repository contains a To-Do List application created using HTML, CSS, JavaS
 
 1. Clone the repository: 
 ```
-git clone https://github.com/Chinmay2660/DiceeGame.git
+git clone https://github.com/Chinmay2660/ToDoList.git
 ```
 2. Open `index.html` in your web browser
 3. Start Coding!
