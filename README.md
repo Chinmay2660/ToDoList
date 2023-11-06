@@ -6,7 +6,6 @@ This repository contains a To-Do List application created using HTML, CSS, JavaS
 
 - **Add Tasks:** Easily include new tasks in the list.
 - **Delete Tasks:** Effortlessly remove tasks from the list.
-- **Task Management:** Edit and mark tasks as completed for better organization.
 - **User-Friendly Interface:** Simple and intuitive design for a seamless user experience.
 
 ## Demos
